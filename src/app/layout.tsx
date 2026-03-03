@@ -1,25 +1,42 @@
 import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/sections";
 
-export const metaData: Metadata = {
-  title: "AI Finance Platform",
-  description: "Next generation AI blockchain solution",
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "Site",
+    template: "%s | site",
+  },
+  description: "site",
+  metadataBase: new URL("https://segwaypowersports.kz"),
   openGraph: {
-    title: "AI Finance Platform",
-    description: "Next generation AI blockchain solution",
-    images: ["/og.jpg"],
-  }
-}
+    title: "Segway Powersports",
+    description: "Официальный дилер Segway Powersports",
+    url: "https://segwaypowersports.kz",
+    siteName: "Segway Powersports",
+    locale: "ru_KZ",
+    type: "website",
+  },
+};
+
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-      >
+    <html lang="ru" className={montserrat.variable}>
+      <body className={`font-sans antialiased`}>
+        <Header />
         {children}
       </body>
     </html>
