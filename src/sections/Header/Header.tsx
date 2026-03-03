@@ -1,15 +1,12 @@
+'use client'
+
+import { PATHS } from "@/constants/path";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Header() {
-  const PATHS = [
-    { name: "Smart Contracts", href: "smart-contracts" },
-    { name: "Services", href: "/services" },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Roadmap", href: "/roadmap" },
-    { name: "Whitepaper", href: "/whitepaper" },
-  ]
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const ICONS = [
     { src: "/icons/facebook.svg", alt: "Facebook" },
     { src: "/icons/instagram.svg", alt: "Instagram" },
@@ -27,7 +24,8 @@ export default function Header() {
         >
           SITE NAME
         </Link>
-        <ul className="flex items-center gap-10 text-white text-sm font-medium">
+
+        <ul className="hidden md:flex items-center gap-10 text-white text-sm font-medium">
           {PATHS.map((item) => (
             <li key={item.name}>
               <Link
@@ -42,7 +40,7 @@ export default function Header() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-5">
+        <div className="hidden md:flex items-center gap-5">
           {ICONS.map((icon) => (
             <Link
               key={icon.alt}
@@ -58,7 +56,26 @@ export default function Header() {
             </Link>
           ))}
         </div>
-
+        <button
+          className="flex flex-col justify-between w-6 h-5 md:hidden"
+          aria-label="Открыть меню"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span
+            className={`block h-0.5 w-full bg-white transition-transform duration-300 origin-center ${isMenuOpen ? "rotate-45 translate-y-[8.8px]" : ""
+              }`}
+          />
+          <span
+            className={`block h-0.5 w-full bg-white transition-opacity duration-300  ${isMenuOpen ? "opacity-0" : "opacity-100"
+              }`}
+          />
+          <span
+            className={`block h-0.5 w-full bg-white transition-transform duration-300 origin-center ${isMenuOpen ? "-rotate-45 -translate-y-[8.8px]" : ""
+              }`}
+          />
+        </button>
       </nav>
     </header>
   );

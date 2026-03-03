@@ -1,2 +1,5 @@
 export { default as Header } from "./Header/Header"
 export { default as WelcomeHero } from "./WelcomeHero/WelcomeHero"
+export { default as Advantages } from "./Advantages/Advantages"
+export { default as Reviews } from "./Reviews/Reviews"
+export { default as Footer } from "./Footer/Footer"
