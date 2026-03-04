@@ -5,7 +5,7 @@ import { IconRenderer } from "@/ui/icon";
 
 export default function AdvantageCard({ icon, title, description }: Advantage) {
   return (
-    <div className="group relative flex flex-col items-center text-center p-8 bg-[#0d0d0f]/80 backdrop-blur-xl border border-white/5 rounded-3xl transition-all duration-500 hover:border-purple-500/40 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(168,85,247,0.1)] h-full overflow-hidden">
+    <div className="group relative flex flex-col items-center text-center p-8 bg-[#0d0d0f]/80 backdrop-blur-xl border border-white/5 rounded-3xl transition-all duration-500 hover:border-purple-500/40 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(168,85,247,0.1)] overflow-hidden">
       
       <div className="absolute -top-10 -right-10 w-32 h-32 bg-purple-600/10 blur-[50px] rounded-full group-hover:bg-purple-600/20 transition-colors duration-500" />
 

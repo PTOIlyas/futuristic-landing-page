@@ -1,13 +1,15 @@
 import { Review } from "@/types/review";
-import { Quote } from "lucide-react";
+import { IconRenderer } from "@/ui/icon";
 
 export default function ReviewCard({ author, rating, content }: Review) {
   return (
     <div className="group relative p-8 bg-[#0d0d0f]/80 backdrop-blur-xl border border-white/5 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:border-purple-500/30 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)]">
 
 
-      <Quote className="absolute top-6 right-8 text-purple-500/20 w-10 h-10 group-hover:text-purple-500/40 transition-colors" />
-
+      <IconRenderer
+        name="Quote" 
+        className="absolute top-6 right-8 text-purple-500/20 w-10 h-10 group-hover:text-purple-500/40 transition-colors" 
+      />
 
       <div className="flex gap-1 mb-4">
         {[...Array(5)].map((_, i) => (

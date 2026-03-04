@@ -1,5 +1,7 @@
+import { IconName } from "@/ui/icon";
+
 export type Advantage = {
-  icon: string;
+  icon: IconName;
   title: string;
   description: string;
 } ;

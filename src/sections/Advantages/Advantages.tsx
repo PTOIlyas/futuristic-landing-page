@@ -21,7 +21,7 @@ const advantages: Advantage[] = [
 
 export default function AdvantagesSection() {
     return (
-        <section className="py-20 bg-black">
+        <section className="py-15 md:py-20  bg-black">
             <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-8 px-4 sm:px-6 lg:px-8">
                 {advantages.map((adv, index) => (
                     <div className="w-full md:w-[calc((100%-4rem)/3)]" key={index}>
